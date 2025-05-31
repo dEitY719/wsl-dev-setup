@@ -1,1 +1,7 @@
 .python-version
+.venv
+.tox
+
+
+*.egg-info
+.mypy_cache

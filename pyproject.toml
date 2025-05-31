@@ -1,0 +1,30 @@
+[tool.black]
+line-length = 88
+target-version = ['py313']
+include = '\.(py|ipynb)$'
+exclude = '''
+/(
+    \.git
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["TODO: your_package_name"]
+skip = ["build", "dist", ".tox", ".venv"]
+
+[tool.mypy]
+files = "."
+
+[mypy]
+ignore_missing_imports = true
+strict = true
+
+[tool.pylint]
+max-line-length = 88
+disable = ["C0114", "C0115", "C0116"]

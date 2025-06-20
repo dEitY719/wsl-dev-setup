@@ -1,6 +1,7 @@
 .python-version
-.venv
-.tox
+.venv/
+.tox/
+.vscode/
 
 
 *.egg-info

@@ -16,12 +16,8 @@ def remove_non_system_pythons() -> None:
     print("🚫 Ubuntu 기본 Python3은 유지하고, 기타 Python 패키지를 제거합니다...")
 
     # 기본 python3 패키지를 확인하여 보존할 버전 결정
-    result = subprocess.run(
-        "python3 -V", shell=True, capture_output=True, text=True, check=True
-    )
-    system_python_version = (
-        result.stdout.strip().split()[1] if result.returncode == 0 else None
-    )
+    result = subprocess.run("python3 -V", shell=True, capture_output=True, text=True, check=True)
+    system_python_version = result.stdout.strip().split()[1] if result.returncode == 0 else None
     print(f"🔍 시스템 Python3 버전: {system_python_version}")
 
     # system python3은 제외한 나머지 python3.X 패키지 삭제

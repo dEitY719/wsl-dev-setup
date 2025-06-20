@@ -1,5 +1,7 @@
 # wsl-dev-setup
 
+**[kr-한국어]** | [en-English](README.en.md)
+
 WSL(Windows Subsystem for Linux) 환경에서 Python 개발 환경을 빠르게 설정할 수 있도록 돕는 자동화 스크립트입니다.  
 `pyenv`를 통해 여러 Python 버전을 설치하고 관리할 수 있도록 구성됩니다.
 
@@ -17,7 +19,7 @@ WSL(Windows Subsystem for Linux) 환경에서 Python 개발 환경을 빠르게 
 ```bash
 git clone https://github.com/dEitY719/wsl-dev-setup.git
 cd wsl-dev-setup
-````
+```
 
 ### 2. 시스템 패키지 설치 (의존성 설치)
 
@@ -31,6 +33,7 @@ python3 setup_pyenv.py
 
 - `setup_pyenv.py`: 전체 pyenv 설치 및 Python 버전 설정 자동화 스크립트
 - `README.md`: 설명 문서
+- `README.en.md`: 설명 문서 (영문)
 
 ## 🛠 설치되는 Python 버전 목록
 
@@ -42,40 +45,40 @@ python3 setup_pyenv.py
 
 이 목록은 `setup_pyenv.py` 내 `PYTHON_LIST`에서 수정할 수 있습니다.
 
-## Code Quality Automation with tox
+## tox를 이용한 코드 품질 자동화
 
-This project uses `tox` to automate code formatting, linting, and type checking.
+이 프로젝트는 `tox`를 사용하여 코드 포맷팅, 린팅, 타입 체킹을 자동화합니다.
 
-### Purpose
+### 목적
 
-- Ensure consistent code style
-- Automate static analysis and early error detection
-- Easily run all or individual checks
+- 일관된 코드 스타일 유지
+- 정적 분석 및 조기 오류 감지 자동화
+- 전체 또는 개별 검사를 쉽게 실행
 
-### How to Use
+### 사용 방법
 
-- Run all checks:
+- 모든 검사 실행:
 
 ```bash
   tox
-````
-
-- Run individual checks:
-
-```bash
-tox -e black    # Run code formatter and apply fixes
-tox -e isort    # Sort imports
-tox -e mypy     # Perform type checking
-tox -e pylint   # Run linter
-tox -e lint     # Shortcut to run only pylint
 ```
 
-- You can configure the target directory or files by setting the `targetdir` environment variable in `tox.ini`. The default is the current directory (`.`).
+- 개별 검사 실행:
 
-### Notes
+```bash
+tox -e black    # 코드 포맷터 실행 및 수정 사항 적용
+tox -e isort    # import 정렬
+tox -e mypy     # 타입 체킹 수행
+tox -e pylint   # 린터 실행
+tox -e lint     # pylint만 실행하는 단축 명령어
+```
 
-- Required tools will be installed automatically in the tox virtual environment.
-- Python 3.7+ is required.
+- `tox.ini`에서 `targetdir` 환경 변수를 설정하여 대상 디렉터리 또는 파일을 구성할 수 있습니다. 기본값은 현재 디렉터리 (`.`)입니다.
+
+### 참고
+
+- 필요한 도구는 tox 가상 환경에 자동으로 설치됩니다.
+- Python 3.7 이상이 필요합니다.
 
 ## 🔄 참고 사항
 
@@ -83,6 +86,6 @@ tox -e lint     # Shortcut to run only pylint
 - `.bashrc` 또는 `.zshrc`에 pyenv 관련 설정이 자동 추가됩니다.
 - 적용을 위해 스크립트 실행 후 `source ~/.bashrc` 또는 `source ~/.zshrc`를 실행하세요.
 
-## 📝 License
+## 📝 라이선스
 
-MIT License
+[MIT 라이선스](LICENSE)
